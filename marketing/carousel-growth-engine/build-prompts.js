@@ -121,13 +121,15 @@ const slides = [
   {
     index: 4,
     role: "Solution",
-    copy: `${brand}: a better way`,
+    // copy must match the rendered HEADLINE (used by QA), not the sub-line.
+    copy: `Meet ${brand}`,
     imagePrompt: slidePrompt("Solution", `Meet ${brand}`, a.content?.tagline || "A better way", "Shift the mood to relief/optimism. Same palette and typography as the reference image."),
   },
   {
     index: 5,
     role: "Feature",
-    copy: feature,
+    // copy must match the rendered (truncated) headline for QA.
+    copy: truncate(feature, 60),
     imagePrompt: slidePrompt("Feature", truncate(feature, 60), stat ? `${stat} and counting` : null, "Show the standout benefit confidently. Same palette and typography as the reference image."),
   },
   {
