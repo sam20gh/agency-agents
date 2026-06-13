@@ -1,0 +1,43 @@
+{
+  "brand": "grubpos.com",
+  "hookStyle": "bold-claim",
+  "slides": [
+    {
+      "index": 1,
+      "role": "Hook",
+      "copy": "This is why your kitchen keeps falling behind",
+      "hookStyle": "bold-claim",
+      "imagePrompt": "A full-bleed vertical 9:16 marketing poster graphic (edge to edge). Aesthetic: modern professional, high-contrast, bold typography, premium. Color palette: a bold high-contrast brand palette. Use bold modern sans-serif typography, large and legible. The image is ONLY a background photo with a bold headline text overlay — nothing else. Keep the bottom 20% clear of text. Centered, mobile-first composition with generous margins. This is the \"Hook\" frame of a 6-part visual story for grubpos.com. Render this exact headline text prominently and correctly spelled: \"This is why your kitchen keeps falling behind\". This slide DEFINES the visual identity for the whole carousel — establish the dominant color, type style, and background treatment here. Bold, high-impact, the kind of frame that stops a thumb mid-scroll. ABSOLUTELY DO NOT render any phone UI, app interface, screenshot frame, status bar, clock, battery, signal bars, Instagram or TikTok logos or chrome, navigation bar, like/comment/share/save icons, follower counts, usernames, captions, or watermarks. No device mockup. Output a clean standalone poster image only. Render ONLY the headline (and supporting line if given) as text — do NOT draw any font names, color codes, hex values, labels, or instruction words as visible text. Editorial, premium, scroll-stopping."
+    },
+    {
+      "index": 2,
+      "role": "Problem",
+      "copy": "You're spending too much time on the wrong things",
+      "imagePrompt": "A full-bleed vertical 9:16 marketing poster graphic (edge to edge). Aesthetic: modern professional, high-contrast, bold typography, premium. Color palette: a bold high-contrast brand palette. Use bold modern sans-serif typography, large and legible. The image is ONLY a background photo with a bold headline text overlay — nothing else. Keep the bottom 20% clear of text. Centered, mobile-first composition with generous margins. This is the \"Problem\" frame of a 6-part visual story for grubpos.com. Render this exact headline text prominently and correctly spelled: \"You're spending too much time on the wrong things\". Mood slightly tense/relatable. Keep the exact same color palette and type style as the reference image. ABSOLUTELY DO NOT render any phone UI, app interface, screenshot frame, status bar, clock, battery, signal bars, Instagram or TikTok logos or chrome, navigation bar, like/comment/share/save icons, follower counts, usernames, captions, or watermarks. No device mockup. Output a clean standalone poster image only. Render ONLY the headline (and supporting line if given) as text — do NOT draw any font names, color codes, hex values, labels, or instruction words as visible text. Editorial, premium, scroll-stopping."
+    },
+    {
+      "index": 3,
+      "role": "Agitation",
+      "copy": "The old way of doing this is broken",
+      "imagePrompt": "A full-bleed vertical 9:16 marketing poster graphic (edge to edge). Aesthetic: modern professional, high-contrast, bold typography, premium. Color palette: a bold high-contrast brand palette. Use bold modern sans-serif typography, large and legible. The image is ONLY a background photo with a bold headline text overlay — nothing else. Keep the bottom 20% clear of text. Centered, mobile-first composition with generous margins. This is the \"Agitation\" frame of a 6-part visual story for grubpos.com. Render this exact headline text prominently and correctly spelled: \"The old way of doing this is broken\". Heighten the stakes visually. Same palette and typography as the reference image. ABSOLUTELY DO NOT render any phone UI, app interface, screenshot frame, status bar, clock, battery, signal bars, Instagram or TikTok logos or chrome, navigation bar, like/comment/share/save icons, follower counts, usernames, captions, or watermarks. No device mockup. Output a clean standalone poster image only. Render ONLY the headline (and supporting line if given) as text — do NOT draw any font names, color codes, hex values, labels, or instruction words as visible text. Editorial, premium, scroll-stopping."
+    },
+    {
+      "index": 4,
+      "role": "Solution",
+      "copy": "grubpos.com: a better way",
+      "imagePrompt": "A full-bleed vertical 9:16 marketing poster graphic (edge to edge). Aesthetic: modern professional, high-contrast, bold typography, premium. Color palette: a bold high-contrast brand palette. Use bold modern sans-serif typography, large and legible. The image is ONLY a background photo with a bold headline text overlay — nothing else. Keep the bottom 20% clear of text. Centered, mobile-first composition with generous margins. This is the \"Solution\" frame of a 6-part visual story for grubpos.com. Render this exact headline text prominently and correctly spelled: \"Meet grubpos.com\". Smaller supporting line beneath it: \"A better way\". Shift the mood to relief/optimism. Same palette and typography as the reference image. ABSOLUTELY DO NOT render any phone UI, app interface, screenshot frame, status bar, clock, battery, signal bars, Instagram or TikTok logos or chrome, navigation bar, like/comment/share/save icons, follower counts, usernames, captions, or watermarks. No device mockup. Output a clean standalone poster image only. Render ONLY the headline (and supporting line if given) as text — do NOT draw any font names, color codes, hex values, labels, or instruction words as visible text. Editorial, premium, scroll-stopping."
+    },
+    {
+      "index": 5,
+      "role": "Feature",
+      "copy": "grubpos.com makes it effortless",
+      "imagePrompt": "A full-bleed vertical 9:16 marketing poster graphic (edge to edge). Aesthetic: modern professional, high-contrast, bold typography, premium. Color palette: a bold high-contrast brand palette. Use bold modern sans-serif typography, large and legible. The image is ONLY a background photo with a bold headline text overlay — nothing else. Keep the bottom 20% clear of text. Centered, mobile-first composition with generous margins. This is the \"Feature\" frame of a 6-part visual story for grubpos.com. Render this exact headline text prominently and correctly spelled: \"grubpos.com makes it effortless\". Show the standout benefit confidently. Same palette and typography as the reference image. ABSOLUTELY DO NOT render any phone UI, app interface, screenshot frame, status bar, clock, battery, signal bars, Instagram or TikTok logos or chrome, navigation bar, like/comment/share/save icons, follower counts, usernames, captions, or watermarks. No device mockup. Output a clean standalone poster image only. Render ONLY the headline (and supporting line if given) as text — do NOT draw any font names, color codes, hex values, labels, or instruction words as visible text. Editorial, premium, scroll-stopping."
+    },
+    {
+      "index": 6,
+      "role": "CTA",
+      "copy": "Try it today",
+      "imagePrompt": "A full-bleed vertical 9:16 marketing poster graphic (edge to edge). Aesthetic: modern professional, high-contrast, bold typography, premium. Color palette: a bold high-contrast brand palette. Use bold modern sans-serif typography, large and legible. The image is ONLY a background photo with a bold headline text overlay — nothing else. Keep the bottom 20% clear of text. Centered, mobile-first composition with generous margins. This is the \"Call to action\" frame of a 6-part visual story for grubpos.com. Render this exact headline text prominently and correctly spelled: \"Try it today\". Smaller supporting line beneath it: \"Find grubpos.com now\". Clear, single, punchy call to action. Same palette and typography as the reference image. ABSOLUTELY DO NOT render any phone UI, app interface, screenshot frame, status bar, clock, battery, signal bars, Instagram or TikTok logos or chrome, navigation bar, like/comment/share/save icons, follower counts, usernames, captions, or watermarks. No device mockup. Output a clean standalone poster image only. Render ONLY the headline (and supporting line if given) as text — do NOT draw any font names, color codes, hex values, labels, or instruction words as visible text. Editorial, premium, scroll-stopping."
+    }
+  ]
+}

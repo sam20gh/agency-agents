@@ -1,0 +1,35 @@
+CAROUSEL GROWTH ENGINE — RUN REPORT
+====================================
+UTC Timestamp : 2026-06-13T18:41:00Z
+Run Directory : /tmp/carousel/runs/20260613-183825
+
+HOOK HEADLINE
+-------------
+"This is why your kitchen keeps falling behind"
+Style: bold-claim | Brand: grubpos.com
+
+PUBLISH STATUS
+--------------
+FAILED: Host not in allowlist: api.upload-post.com. Add this host to your network egress settings to allow access.
+(Source: upload-response.json — network egress policy blocked outbound call to api.upload-post.com)
+
+SLIDES REGENERATED
+------------------
+slide-2.jpg — REGENERATED (attempt 1/3)
+  Reason: Original contained a text rendering artifact "TH WRONG" on line 4 instead
+  of the correct "THE WRONG" from copy "You're spending too much time on the wrong things".
+  Regenerated via generate_image.py with original imagePrompt + slide-1.jpg as visual reference.
+  Result: Text now reads correctly and fully.
+
+SLIDES THAT PASSED QA WITHOUT REGENERATION
+-------------------------------------------
+slide-1.jpg — PASS: "This is why your kitchen keeps falling behind" — correct
+slide-3.jpg — PASS: "The old way of doing this is broken" — correct
+slide-4.jpg — PASS: "Meet grubpos.com / A better way" — correct
+slide-5.jpg — PASS: "grubpos.com makes it effortless" — correct
+slide-6.jpg — PASS: "Try it today / Find grubpos.com now" — correct
+
+LEARNINGS
+---------
+Posts tracked: 2 | Avg engagement: 0 | Best hook: "This is why your kitchen keeps falling behind"
+Best time: 15h | Recommendation: Not enough data yet — keep publishing daily (target: 10 posts).

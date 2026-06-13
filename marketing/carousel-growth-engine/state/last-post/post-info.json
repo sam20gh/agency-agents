@@ -1,0 +1,11 @@
+{
+  "publishedAt": "2026-06-13T18:41:00.003Z",
+  "request_id": null,
+  "success": null,
+  "platforms": [
+    "instagram"
+  ],
+  "response": {
+    "raw": "Host not in allowlist: api.upload-post.com. Add this host to your network egress settings to allow access."
+  }
+}
