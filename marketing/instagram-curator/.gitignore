@@ -1,0 +1,8 @@
+# Generated deliverables (regenerate with ./curate.sh)
+out/
+
+# Secrets
+.env
+
+# Node
+node_modules/

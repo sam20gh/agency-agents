@@ -1,0 +1,13 @@
+{
+  "name": "instagram-curator",
+  "version": "1.0.0",
+  "description": "Instagram Curator strategy toolkit: brand aesthetic guide, 30-day 1/3-rule content calendar, tiered hashtag strategy, and Story-highlights plan. Deterministic (no API keys); reuses the carousel engine's web research.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "aesthetic": "node aesthetic-guide.js",
+    "calendar": "node content-calendar.js",
+    "hashtags": "node hashtag-strategy.js",
+    "highlights": "node highlights-plan.js"
+  }
+}
