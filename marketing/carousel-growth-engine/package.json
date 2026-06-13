@@ -1,0 +1,15 @@
+{
+  "name": "carousel-growth-engine",
+  "version": "1.0.0",
+  "description": "Autonomous TikTok/Instagram carousel generator: Playwright research + Gemini image generation + Upload-Post publishing + analytics learning loop.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "postinstall": "playwright install chromium",
+    "analyze": "node analyze-web.js",
+    "learn": "node learn-from-analytics.js"
+  },
+  "dependencies": {
+    "playwright": "^1.48.0"
+  }
+}

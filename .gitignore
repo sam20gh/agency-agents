@@ -80,3 +80,8 @@ integrations/kimi/*/
 !integrations/openclaw/README.md
 !integrations/kimi/README.md
 integrations/codex/agents/*
+
+# Environment files with secrets (never commit)
+.env
+.env.*
+!.env.example

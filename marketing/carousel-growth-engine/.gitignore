@@ -1,0 +1,8 @@
+node_modules/
+.env
+*.log
+# runtime artifacts (slides, analysis, learnings) live in CAROUSEL_HOME (/tmp/carousel)
+runs/
+analysis.json
+learnings.json
+slide-*.jpg
