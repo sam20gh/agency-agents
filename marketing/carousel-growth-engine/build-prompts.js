@@ -40,7 +40,10 @@ if (learningsPath) {
 const brand = a.brand?.name || "the brand";
 const palette = (a.visualContext?.palette || a.brand?.colors || []).slice(0, 4);
 const mood = a.visualContext?.mood || "modern professional, high-contrast, bold typography";
-const fonts = a.brand?.typography?.heading || "bold modern sans-serif";
+// Describe the font as a STYLE, never the raw family name — passing a literal
+// name (e.g. a fallback "Times New Roman") into the prompt makes Gemini render
+// the name as visible text on the slide.
+const fonts = describeFont(a.brand?.typography?.heading);
 
 // Pick a hook. Prefer a learned top-performer if available.
 const learnedHook = learnings?.bestHooks?.[0]?.hook;
@@ -63,7 +66,7 @@ const cta = (a.content?.ctas || []).find((c) => /try|start|get|join|sign|downloa
 const paletteStr = palette.length ? palette.join(", ") : "a bold high-contrast brand palette";
 const visualDNA =
   `A full-bleed vertical 9:16 marketing poster graphic (edge to edge). Aesthetic: ${mood}. ` +
-  `Color palette: ${paletteStr}. Typography: ${fonts}, large and legible. ` +
+  `Color palette: ${paletteStr}. Use ${fonts}, large and legible. ` +
   `The image is ONLY a background photo with a bold headline text overlay — nothing else. ` +
   `Keep the bottom 20% clear of text. Centered, mobile-first composition with generous margins.`;
 
@@ -72,7 +75,9 @@ const NEGATIVE =
   `ABSOLUTELY DO NOT render any phone UI, app interface, screenshot frame, status bar, ` +
   `clock, battery, signal bars, Instagram or TikTok logos or chrome, navigation bar, ` +
   `like/comment/share/save icons, follower counts, usernames, captions, or watermarks. ` +
-  `No device mockup. Output a clean standalone poster image only.`;
+  `No device mockup. Output a clean standalone poster image only. ` +
+  `Render ONLY the headline (and supporting line if given) as text — do NOT draw any ` +
+  `font names, color codes, hex values, labels, or instruction words as visible text.`;
 
 function slidePrompt(role, headline, sub, extra = "") {
   return (
@@ -155,6 +160,13 @@ writeFileSync(join(runDir, "title.txt"), `${title} ${titleTags}`.trim().slice(0,
 console.error(`[prompts] hook="${hookCopy}" (${hookStyle}) | 6 slides | tags: ${tags.join(" ")}`);
 
 // ---- helpers ----
+
+function describeFont(stack) {
+  const s = (stack || "").toLowerCase();
+  if (/mono|consol|courier/.test(s)) return "bold monospace typography";
+  if (/serif/.test(s) && !/sans/.test(s)) return "elegant serif typography";
+  return "bold modern sans-serif typography";
+}
 
 function classifyHookStyle(h) {
   if (/\?$/.test(h.trim())) return "question";
