@@ -77,8 +77,13 @@ fi
 echo ">> Phase 3: Generate slides" >&2
 bash "$HERE/generate-slides.sh" "$RUN_DIR/analysis.json" "$RUN_DIR" "$LEARNINGS"
 
-echo ">> Slides ready. Verify legibility/spelling, then regenerate any weak slide with:" >&2
-echo "   uv run generate_image.py --prompt \"...\" --output $RUN_DIR/slide-N.jpg --input-image $RUN_DIR/slide-1.jpg" >&2
+# ---- Phase 3b: Automated vision QA (Gemini) --------------------------------
+if [[ "${SKIP_VERIFY:-0}" != "1" ]]; then
+  echo ">> Phase 3b: Vision QA (regenerating any weak slides)" >&2
+  bash "$HERE/verify-slides.sh" "$RUN_DIR" || echo "[run] QA step had issues (continuing)" >&2
+else
+  echo ">> Phase 3b: vision QA skipped (SKIP_VERIFY=1)" >&2
+fi
 
 if [[ "$MODE" == "no-publish" ]]; then
   echo ">> --no-publish: stopping before publish. Slides in $RUN_DIR" >&2
