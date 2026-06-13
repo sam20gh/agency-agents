@@ -1,19 +1,23 @@
-UTC TIMESTAMP: 2026-06-13T18:56:43Z
-RUN DIR: /tmp/carousel/runs/20260613-185444
+UTC TIMESTAMP: 2026-06-13T19:54:29Z
+RUN DIR: /tmp/carousel/runs/20260613-195143
 
 HOOK HEADLINE: "This is why your kitchen keeps falling behind"
 HOOK STYLE: bold-claim
 
 PUBLISH STATUS: FAILED: Host not in allowlist: api.upload-post.com. Add this host to your network egress settings to allow access.
 
-SLIDES REGENERATED: none
-All 6 slides passed visual QA on the first attempt:
-  - slide-1: Hook — text correct, clean composition, bottom clear
-  - slide-2: Problem — text correct, consistent style
-  - slide-3: Agitation — text correct, chaotic kitchen mood
-  - slide-4: Solution — "Meet grubpos.com / A better way" correct
-  - slide-5: Feature — "grubpos.com makes it effortless" correct
-  - slide-6: CTA — "Try it today / Find grubpos.com now" correct
+SLIDES REGENERATED:
+  - slide-2.jpg (attempt 1 of 3): Missing word "time" — original showed "You're spending
+    too much on the wrong things" instead of required "You're spending too much time on
+    the wrong things". Regenerated successfully on first retry.
+
+QA RESULTS (all passed after regeneration):
+  - slide-1: Hook — "This is why your kitchen keeps falling behind" ✓
+  - slide-2: Problem — "You're spending too much time on the wrong things" ✓ (regenerated)
+  - slide-3: Agitation — "The old way of doing this is broken" ✓
+  - slide-4: Solution — "Meet grubpos.com / A better way" ✓
+  - slide-5: Feature — "grubpos.com makes it effortless" ✓
+  - slide-6: CTA — "Try it today / Find grubpos.com now" ✓
 
 NOTE: Publish failed because the remote execution environment's network egress
 policy blocks outbound HTTPS to api.upload-post.com. To fix, add
