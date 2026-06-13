@@ -6,3 +6,6 @@ runs/
 analysis.json
 learnings.json
 slide-*.jpg
+# ...except the persistent, repo-tracked learnings state used by cloud runs
+!state/
+!state/learnings.json

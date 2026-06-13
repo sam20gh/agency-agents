@@ -37,7 +37,11 @@ fi
 if [[ -f "$HERE/.env" ]]; then set -a; source "$HERE/.env"; set +a; fi
 
 CAROUSEL_HOME="${CAROUSEL_HOME:-/tmp/carousel}"
-LEARNINGS="$CAROUSEL_HOME/learnings.json"
+# Persistent learnings file. Defaults to runtime dir, but can be pointed at a
+# repo-tracked file (e.g. state/learnings.json) so history survives across
+# ephemeral cloud runs. If LEARNINGS_FILE is set, its directory is created.
+LEARNINGS="${LEARNINGS_FILE:-$CAROUSEL_HOME/learnings.json}"
+mkdir -p "$(dirname "$LEARNINGS")"
 TS="$(date +%Y%m%d-%H%M%S)"
 RUN_DIR="$CAROUSEL_HOME/runs/$TS"
 mkdir -p "$RUN_DIR"

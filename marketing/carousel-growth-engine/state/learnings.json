@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "updatedAt": "2026-06-13T15:28:54.558Z",
+  "postCount": 1,
+  "history": [
+    {
+      "request_id": "46de587bce5c45ee85ca546d6c224402",
+      "publishedAt": "2026-06-13T15:28:27.346Z",
+      "hour": "15",
+      "day": "Sat",
+      "hookCopy": "This is why your kitchen keeps falling behind",
+      "hookStyle": "bold-claim",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "engagementRate": 0
+    }
+  ],
+  "bestHooks": [
+    {
+      "hook": "This is why your kitchen keeps falling behind",
+      "style": "bold-claim",
+      "views": 0,
+      "engagementRate": 0
+    }
+  ],
+  "bestTimes": [
+    {
+      "value": "15",
+      "avgViews": 0,
+      "samples": 1
+    }
+  ],
+  "bestDays": [
+    {
+      "value": "Sat",
+      "avgViews": 0,
+      "samples": 1
+    }
+  ],
+  "hookStyleStats": {
+    "bold-claim": {
+      "count": 1,
+      "avgViews": 0,
+      "avgEngagement": 0
+    }
+  },
+  "avgEngagementRate": 0,
+  "recommendations": [
+    "Not enough data yet — keep publishing daily to build the learning baseline (target: 10 posts)."
+  ],
+  "profileSnapshot": {
+    "followers": 0,
+    "totalLikes": 0,
+    "fetchedAt": "2026-06-13T15:23:43.159Z"
+  }
+}
