@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-13T20:01:02.615Z",
-  "postCount": 5,
+  "updatedAt": "2026-06-13T20:25:58.271Z",
+  "postCount": 6,
   "history": [
     {
       "request_id": "46de587bce5c45ee85ca546d6c224402",
@@ -67,6 +67,19 @@
       "comments": 0,
       "shares": 0,
       "engagementRate": 0
+    },
+    {
+      "request_id": "db023110241a428a80952ed1a2c48bac",
+      "publishedAt": "2026-06-13T20:25:58.189Z",
+      "hour": "20",
+      "day": "Sat",
+      "hookCopy": "This is why your kitchen keeps falling behind",
+      "hookStyle": "bold-claim",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "engagementRate": 0
     }
   ],
   "bestHooks": [
@@ -120,19 +133,19 @@
     {
       "value": "20",
       "avgViews": 0,
-      "samples": 1
+      "samples": 2
     }
   ],
   "bestDays": [
     {
       "value": "Sat",
       "avgViews": 0,
-      "samples": 5
+      "samples": 6
     }
   ],
   "hookStyleStats": {
     "bold-claim": {
-      "count": 5,
+      "count": 6,
       "avgViews": 0,
       "avgEngagement": 0
     }
@@ -147,6 +160,6 @@
   "profileSnapshot": {
     "followers": 0,
     "totalLikes": 0,
-    "fetchedAt": "2026-06-13T19:58:53.579Z"
+    "fetchedAt": "2026-06-13T20:21:51.324Z"
   }
 }

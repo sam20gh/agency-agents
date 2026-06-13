@@ -1,0 +1,96 @@
+===== MANUAL TEST RUN 20:21:47Z =====
+================================================================
+Daily run start: 2026-06-13T20:21:48Z
+================================================================
+ Carousel Growth Engine — 20260613-212148
+ URL: https://grubpos.com | mode: full | run: /tmp/carousel/runs/20260613-212148
+================================================================
+>> Phase 1: Learn from history
+[analytics] Fetching profile analytics ...
+[analytics] Fetching impressions breakdown ...
+[analytics] Fetching per-post analytics for 46de587bce5c45ee85ca546d6c224402 ...
+[analytics] Wrote /tmp/carousel/runs/20260613-212148/analytics.json
+[learn] posts=5 avgEng=0 bestHook="This is why your kitchen keeps falling behind" bestTime=15h
+[learn] rec: Lead with a "bold-claim" hook — top performer: "This is why your kitchen keeps falling behind" (0 views).
+[learn] rec: Post around 15:00 UTC — best average reach (0 views, 1 samples).
+[learn] rec: Sat is your strongest day (0 avg views).
+[learn] rec: Engagement (0.0%) is below the 5% target — sharpen the hook and CTA, and make slide 1 more polarizing.
+>> Phase 2: Research https://grubpos.com
+[analyze] Loading https://grubpos.com ...
+[analyze] Visiting internal page https://grubpos.com/customers/ ...
+[analyze] Visiting internal page https://grubpos.com/pricing/ ...
+[analyze] Visiting internal page https://grubpos.com/features/ ...
+[analyze] Visiting internal page https://grubpos.com/about/ ...
+[analyze] Wrote /tmp/carousel/runs/20260613-212148/analysis.json
+[analyze] Brand: Grub24 | Niche: restaurant-tech | Competitors: none
+>> Phase 3: Generate slides
+[slides] Building prompts ...
+[prompts] hook="This is why your kitchen keeps falling behind" (bold-claim) | 6 slides | tags: #fyp #foryou #restaurant #restaurantlife #hospitality #epos #grub24
+[slides] Generating slide 1 (visual DNA) ...
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260613-212148/slide-1.jpg i2i=False
+[gemini] saved /tmp/carousel/runs/20260613-212148/slide-1.jpg (768x1376)
+[slides] Generating slide 2 (i2i from slide-1) ...
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260613-212148/slide-2.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260613-212148/slide-2.jpg (768x1376)
+[slides] Generating slide 3 (i2i from slide-1) ...
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260613-212148/slide-3.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260613-212148/slide-3.jpg (768x1376)
+[slides] Generating slide 4 (i2i from slide-1) ...
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260613-212148/slide-4.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260613-212148/slide-4.jpg (768x1376)
+[slides] Generating slide 5 (i2i from slide-1) ...
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260613-212148/slide-5.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260613-212148/slide-5.jpg (768x1376)
+[slides] Generating slide 6 (i2i from slide-1) ...
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260613-212148/slide-6.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260613-212148/slide-6.jpg (768x1376)
+[slides] Done. 6 slides in /tmp/carousel/runs/20260613-212148
+/tmp/carousel/runs/20260613-212148/slide-1.jpg
+/tmp/carousel/runs/20260613-212148/slide-2.jpg
+/tmp/carousel/runs/20260613-212148/slide-3.jpg
+/tmp/carousel/runs/20260613-212148/slide-4.jpg
+/tmp/carousel/runs/20260613-212148/slide-5.jpg
+/tmp/carousel/runs/20260613-212148/slide-6.jpg
+>> Phase 3b: Vision QA (regenerating any weak slides)
+slide-1: PASS
+slide-2: regenerating (try 1/3) — reason: Readable text is present in the bottom ~20% of the image.
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260613-212148/slide-2.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260613-212148/slide-2.jpg (768x1376)
+slide-2: regenerating (try 2/3) — reason: Readable text is present on the order tickets in the bottom ~20% of the image.
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260613-212148/slide-2.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260613-212148/slide-2.jpg (768x1376)
+slide-2: PASS (after 2 regen)
+slide-3: regenerating (try 1/3) — reason: Fake app UI and status bar elements are visible on the tablets.
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260613-212148/slide-3.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260613-212148/slide-3.jpg (768x1376)
+slide-3: regenerating (try 2/3) — reason: Headline text is garbled/misspelled: "take o order order" instead of "take one order".
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260613-212148/slide-3.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260613-212148/slide-3.jpg (768x1376)
+slide-3: PASS (after 2 regen)
+slide-4: regenerating (try 1/3) — reason: Headline text is "Meet Grub24" instead of the required "Grub24: a better way".
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260613-212148/slide-4.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260613-212148/slide-4.jpg (768x1376)
+slide-4: regenerating (try 2/3) — reason: Headline text is incorrect. It should be "Grub24: a better way" but reads "Meet Grub24".
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260613-212148/slide-4.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260613-212148/slide-4.jpg (768x1376)
+slide-4: regenerating (try 3/3) — reason: The headline text is not "Grub24: a better way"; it displays "Meet Grub24" instead.
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260613-212148/slide-4.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260613-212148/slide-4.jpg (768x1376)
+slide-4: FAIL after 3 tries — keeping best. last reason: Headline text is 'Meet Grub24' instead of the required 'Grub24: a better way'.
+slide-5: PASS
+slide-6: PASS
+[qa] report written to /tmp/carousel/runs/20260613-212148/qa-report.txt
+[qa] some slides imperfect (kept best)
+>> Phase 4: Publish
+[publish] Uploading 6 slides to: instagram ...
+[publish] request_id=db023110241a428a80952ed1a2c48bac
+[publish] Wrote /tmp/carousel/runs/20260613-212148/post-info.json
+[learn] posts=6 avgEng=0 bestHook="This is why your kitchen keeps falling behind" bestTime=15h
+[learn] rec: Lead with a "bold-claim" hook — top performer: "This is why your kitchen keeps falling behind" (0 views).
+[learn] rec: Post around 15:00 UTC — best average reach (0 views, 1 samples).
+[learn] rec: Sat is your strongest day (0 avg views).
+[learn] rec: Engagement (0.0%) is below the 5% target — sharpen the hook and CTA, and make slide 1 more polarizing.
+================================================================
+ DONE. Artifacts in: /tmp/carousel/runs/20260613-212148
+================================================================
+Daily run end (0): 2026-06-13T20:25:58Z
