@@ -5,10 +5,12 @@
  *
  * Narrative arc (fixed): Hook -> Problem -> Agitation -> Solution -> Feature -> CTA
  *
- * Outputs (into <run-dir>):
- *   slide-prompts.json  — array of { index, role, copy, imagePrompt }
- *   caption.txt         — platform caption with hashtags
- *   title.txt           — TikTok title (<= 90 chars)
+ * Content comes from a rotating set of GrubPos product CAMPAIGNS so each daily
+ * post is materially different from the last. The scraped analysis.json is used
+ * only for the VISUAL identity (palette, mood, fonts) — not the copy — so the
+ * brand, product names, and claims are always accurate and on-message.
+ *
+ * Outputs (into <run-dir>): slide-prompts.json, caption.txt, title.txt
  *
  * Usage:
  *   node build-prompts.js <analysis.json> <run-dir> [learnings.json]
@@ -37,40 +39,114 @@ if (learningsPath) {
   }
 }
 
-const brand = a.brand?.name || "the brand";
-const palette = (a.visualContext?.palette || a.brand?.colors || []).slice(0, 4);
-const mood = a.visualContext?.mood || "modern professional, high-contrast, bold typography";
-// Describe the font as a STYLE, never the raw family name — passing a literal
-// name (e.g. a fallback "Times New Roman") into the prompt makes Gemini render
-// the name as visible text on the slide.
-const fonts = describeFont(a.brand?.typography?.heading);
+// Brand is fixed for this deployment (the scrape often falls back to a hostname).
+const brand = process.env.BRAND_NAME || "GrubPos";
+const SITE = "grubpos.com";
 
-// Pick a hook. Prefer a learned top-performer if available.
-const learnedHook = learnings?.bestHooks?.[0]?.hook;
-const hookPool = a.hooks && a.hooks.length ? a.hooks : ["The thing you didn't know you needed"];
-const hookCopy = learnedHook || hookPool[Math.floor(Math.random() * hookPool.length)];
+// ---- GrubPos product campaigns (rotated for day-to-day variety) ------------
+// One campaign = one full 6-slide story for a specific product/angle. Keep
+// headlines short so they render cleanly. proof = slide-5 sub (no scraped fees).
+const CAMPAIGNS = [
+  {
+    id: "platform",
+    product: "GrubPos",
+    hook: "Running 5 systems to run one restaurant?",
+    problem: "Your till, kitchen and online orders don't talk",
+    agitation: "So you're reconciling it all by hand at midnight",
+    solution: "Meet GrubPos",
+    solutionSub: "One system for your whole operation",
+    feature: "Every order in one place",
+    proof: "Trusted by 4000s of restaurants",
+    cta: "Book a free demo",
+    tag: "#epos",
+  },
+  {
+    id: "digital-ordering",
+    product: "GrubPos Digital Ordering",
+    hook: "Marketplaces are eating your profit",
+    problem: "Just Eat, Deliveroo & Uber Eats take 14–35% per order",
+    agitation: "That's margin you never get back",
+    solution: "Go commission-free",
+    solutionSub: "with GrubPos online ordering",
+    feature: "Keep 100% of every order",
+    proof: "Commission-free, always",
+    cta: "Stop paying commission",
+    tag: "#commissionfree",
+  },
+  {
+    id: "kds",
+    product: "GrubPos KDS",
+    hook: "Paper tickets are slowing your kitchen",
+    problem: "Lost dockets and orders shouted across the pass",
+    agitation: "Every missed ticket is a refund and a bad review",
+    solution: "Meet GrubPos KDS",
+    solutionSub: "Your kitchen display system",
+    feature: "Orders routed to the right station",
+    proof: "No more paper tickets",
+    cta: "Upgrade your kitchen",
+    tag: "#kitchen",
+  },
+  {
+    id: "kiosk",
+    product: "GrubKiosk",
+    hook: "Your counter queue is costing you sales",
+    problem: "At peak, customers walk out instead of waiting",
+    agitation: "Long lines mean smaller orders and lost covers",
+    solution: "Meet GrubKiosk",
+    solutionSub: "Self-ordering for fast food & QSR",
+    feature: "Bigger baskets, shorter queues",
+    proof: "Self-service that upsells for you",
+    cta: "Add self-ordering kiosks",
+    tag: "#selfordering",
+  },
+  {
+    id: "epos",
+    product: "GrubPos EPOS",
+    hook: "Your till shouldn't slow your team down",
+    problem: "Clunky tills cost you covers at the worst time",
+    agitation: "Every fumbled order is a table you can't turn",
+    solution: "Meet GrubPos EPOS",
+    solutionSub: "One fast, reliable till",
+    feature: "Dine-in, takeaway & delivery in one",
+    proof: "Built for busy service",
+    cta: "See GrubPos EPOS",
+    tag: "#epos",
+  },
+  {
+    id: "websites",
+    product: "GrubPos Websites",
+    hook: "You don't own your customers — apps do",
+    problem: "Your regulars order through apps that hide their data",
+    agitation: "No list, no control, no repeat marketing",
+    solution: "Own your channel",
+    solutionSub: "with a branded GrubPos site",
+    feature: "Your brand, your customers, your data",
+    proof: "Commission-free ordering built in",
+    cta: "Claim your restaurant site",
+    tag: "#restaurantmarketing",
+  },
+];
+
+// Rotate by how many posts already exist so consecutive runs never repeat.
+const rotation = Number.isFinite(learnings?.history?.length) ? learnings.history.length : 0;
+const c = CAMPAIGNS[rotation % CAMPAIGNS.length];
+
+const hookCopy = c.hook;
 const hookStyle = classifyHookStyle(hookCopy);
 
-const pain = (a.painPoints && a.painPoints[0]) || "The old way of doing this is broken";
-const pain2 = (a.painPoints && a.painPoints[1]) || "And it's quietly costing you every day";
+// ---- Visual identity (from the scrape; copy stays curated) ------------------
+const palette = (a.visualContext?.palette || a.brand?.colors || []).slice(0, 4);
+const mood = a.visualContext?.mood || "warm appetizing restaurant-tech, navy and bright blue accent, confident bold sans-serif";
+const fonts = describeFont(a.brand?.typography?.heading);
+const paletteStr = palette.length ? palette.join(", ") : "navy, near-black, white and a bright blue accent";
 
-const feature =
-  (a.content?.features || []).find((f) => f.length < 80) ||
-  a.content?.tagline ||
-  `${brand} makes it effortless`;
-const stat = (a.content?.stats || [])[0];
-const competitor = (a.competitors || [])[0];
-const cta = (a.content?.ctas || []).find((c) => /try|start|get|join|sign|download|buy|shop/i.test(c)) || "Try it today";
-
-// Visual DNA shared across every slide so Gemini keeps coherence.
-const paletteStr = palette.length ? palette.join(", ") : "a bold high-contrast brand palette";
 const visualDNA =
   `A full-bleed vertical 9:16 marketing poster graphic (edge to edge). Aesthetic: ${mood}. ` +
   `Color palette: ${paletteStr}. Use ${fonts}, large and legible. ` +
+  `Real busy restaurant/kitchen context. ` +
   `The image is ONLY a background photo with a bold headline text overlay — nothing else. ` +
   `Keep the bottom 20% clear of text. Centered, mobile-first composition with generous margins.`;
 
-// Hard negative constraints: stop Gemini from drawing a fake app/phone screenshot.
 const NEGATIVE =
   `ABSOLUTELY DO NOT render any phone UI, app interface, screenshot frame, status bar, ` +
   `clock, battery, signal bars, Instagram or TikTok logos or chrome, navigation bar, ` +
@@ -92,11 +168,11 @@ const slides = [
   {
     index: 1,
     role: "Hook",
-    copy: hookCopy,
+    copy: c.hook,
     hookStyle,
     imagePrompt: slidePrompt(
       "Hook",
-      hookCopy,
+      c.hook,
       null,
       "This slide DEFINES the visual identity for the whole carousel — establish the dominant color, type style, and background treatment here. Bold, high-impact, the kind of frame that stops a thumb mid-scroll."
     ),
@@ -104,64 +180,61 @@ const slides = [
   {
     index: 2,
     role: "Problem",
-    copy: pain,
-    imagePrompt: slidePrompt("Problem", pain, null, "Mood slightly tense/relatable. Keep the exact same color palette and type style as the reference image."),
+    copy: c.problem,
+    imagePrompt: slidePrompt("Problem", c.problem, null, "Mood slightly tense/relatable. Keep the exact same color palette and type style as the reference image."),
   },
   {
     index: 3,
     role: "Agitation",
-    copy: pain2,
-    imagePrompt: slidePrompt(
-      "Agitation",
-      pain2,
-      competitor ? `Even ${competitor} users feel this.` : null,
-      "Heighten the stakes visually. Same palette and typography as the reference image."
-    ),
+    copy: c.agitation,
+    imagePrompt: slidePrompt("Agitation", c.agitation, null, "Heighten the stakes visually. Same palette and typography as the reference image."),
   },
   {
     index: 4,
     role: "Solution",
-    // copy must match the rendered HEADLINE (used by QA), not the sub-line.
-    copy: `Meet ${brand}`,
-    imagePrompt: slidePrompt("Solution", `Meet ${brand}`, a.content?.tagline || "A better way", "Shift the mood to relief/optimism. Same palette and typography as the reference image."),
+    copy: c.solution, // matches rendered headline (QA checks this)
+    imagePrompt: slidePrompt("Solution", c.solution, c.solutionSub, "Shift the mood to relief/optimism. Same palette and typography as the reference image."),
   },
   {
     index: 5,
     role: "Feature",
-    // copy must match the rendered (truncated) headline for QA.
-    copy: truncate(feature, 60),
-    imagePrompt: slidePrompt("Feature", truncate(feature, 60), stat ? `${stat} and counting` : null, "Show the standout benefit confidently. Same palette and typography as the reference image."),
+    copy: truncate(c.feature, 60),
+    imagePrompt: slidePrompt("Feature", truncate(c.feature, 60), c.proof, "Show the standout benefit confidently. Same palette and typography as the reference image."),
   },
   {
     index: 6,
     role: "CTA",
-    copy: cta,
-    imagePrompt: slidePrompt("Call to action", cta, `Find ${brand} now`, "Clear, single, punchy call to action. Same palette and typography as the reference image."),
+    copy: c.cta,
+    imagePrompt: slidePrompt("Call to action", c.cta, SITE, "Clear, single, punchy call to action. Same palette and typography as the reference image."),
   },
 ];
 
-writeFileSync(join(runDir, "slide-prompts.json"), JSON.stringify({ brand, hookStyle, slides }, null, 2));
+writeFileSync(
+  join(runDir, "slide-prompts.json"),
+  JSON.stringify({ brand, campaign: c.id, product: c.product, hookStyle, slides }, null, 2)
+);
 
-// Caption + hashtags
-const tags = buildHashtags(a);
+// ---- Caption + hashtags ----------------------------------------------------
+const tags = buildHashtags(c);
 const caption =
-  `${hookCopy}\n\n` +
-  `${pain} ${pain2}\n\n` +
-  `${brand} ${a.content?.tagline ? "— " + a.content.tagline : "fixes it."} ${cta} 👇\n\n` +
+  `${c.hook}\n\n` +
+  `${c.problem}. ${c.agitation}.\n\n` +
+  `${c.solution} — ${c.solutionSub}. ${c.feature}.\n\n` +
+  `${c.cta} 👇  ${SITE}\n\n` +
   tags.join(" ");
 writeFileSync(join(runDir, "caption.txt"), caption);
 
-// TikTok title: <= 90 chars including 2-3 hashtags.
-let title = hookCopy.replace(/\s+/g, " ").trim();
+// TikTok/IG title: <= 90 chars including a few hashtags.
+let title = c.hook.replace(/\s+/g, " ").trim();
 const titleTags = tags.slice(0, 3).join(" ");
 if ((title + " " + titleTags).length > 90) {
   title = title.slice(0, 90 - titleTags.length - 2).trim();
 }
 writeFileSync(join(runDir, "title.txt"), `${title} ${titleTags}`.trim().slice(0, 90));
 
-console.error(`[prompts] hook="${hookCopy}" (${hookStyle}) | 6 slides | tags: ${tags.join(" ")}`);
+console.error(`[prompts] campaign=${c.id} (${c.product}) hook="${c.hook}" | rotation=${rotation} | tags: ${tags.join(" ")}`);
 
-// ---- helpers ----
+// ---- helpers ----------------------------------------------------------------
 
 function describeFont(stack) {
   const s = (stack || "").toLowerCase();
@@ -181,21 +254,7 @@ function truncate(s, n) {
   return s.length > n ? s.slice(0, n - 1).trim() + "…" : s;
 }
 
-function buildHashtags(a) {
-  const base = ["#fyp", "#foryou"];
-  const nicheTags = {
-    "restaurant-tech": ["#restaurant", "#restaurantlife", "#hospitality", "#epos"],
-    saas: ["#saas", "#productivity", "#startup", "#tech"],
-    ecommerce: ["#smallbusiness", "#shopping", "#ecommerce", "#tiktokmademebuyit"],
-    app: ["#app", "#tech", "#lifehack", "#productivity"],
-    "developer-tools": ["#coding", "#developer", "#programming", "#tech"],
-    health: ["#wellness", "#health", "#fitness", "#selfcare"],
-    education: ["#learnontiktok", "#education", "#skills", "#career"],
-    design: ["#design", "#ui", "#creative", "#designtok"],
-    general: ["#business", "#growth", "#tips", "#viral"],
-  };
-  const niche = nicheTags[a.businessType] || nicheTags.general;
-  const brandTag =
-    "#" + (a.brand?.name || "brand").toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 20);
-  return [...new Set([...base, ...niche.slice(0, 4), brandTag])].slice(0, 8);
+function buildHashtags(campaign) {
+  const base = ["#fyp", "#foryou", "#restaurant", "#hospitality", "#restaurantlife"];
+  return [...new Set([...base, campaign.tag, "#grubpos"])].slice(0, 8);
 }
