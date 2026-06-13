@@ -1,25 +1,17 @@
-UTC TIMESTAMP: 2026-06-13T19:54:29Z
-RUN DIR: /tmp/carousel/runs/20260613-195143
+UTC Timestamp: 2026-06-13T20:00:48Z
+Run Directory: /tmp/carousel/runs/20260613-195853
 
-HOOK HEADLINE: "This is why your kitchen keeps falling behind"
-HOOK STYLE: bold-claim
+Hook Headline: "This is why your kitchen keeps falling behind" (bold-claim)
 
-PUBLISH STATUS: FAILED: Host not in allowlist: api.upload-post.com. Add this host to your network egress settings to allow access.
+PUBLISH STATUS — FAILED: Host not in allowlist: api.upload-post.com. Add this host to your network egress settings to allow access.
 
-SLIDES REGENERATED:
-  - slide-2.jpg (attempt 1 of 3): Missing word "time" — original showed "You're spending
-    too much on the wrong things" instead of required "You're spending too much time on
-    the wrong things". Regenerated successfully on first retry.
+Slides regenerated: none
+All 6 slides passed Vision QA on first generation:
+  - slide-1.jpg: Hook — copy correct, clean poster, bottom clear
+  - slide-2.jpg: Problem — copy correct, clean poster, bottom clear
+  - slide-3.jpg: Agitation — copy correct, clean poster, bottom clear
+  - slide-4.jpg: Solution — copy correct ("Meet grubpos.com / A better way"), clean poster
+  - slide-5.jpg: Feature — copy correct ("GRUBPOS.COM MAKES IT EFFORTLESS"), clean poster
+  - slide-6.jpg: CTA — copy correct ("TRY IT TODAY / FIND GRUBPOS.COM NOW"), clean poster
 
-QA RESULTS (all passed after regeneration):
-  - slide-1: Hook — "This is why your kitchen keeps falling behind" ✓
-  - slide-2: Problem — "You're spending too much time on the wrong things" ✓ (regenerated)
-  - slide-3: Agitation — "The old way of doing this is broken" ✓
-  - slide-4: Solution — "Meet grubpos.com / A better way" ✓
-  - slide-5: Feature — "grubpos.com makes it effortless" ✓
-  - slide-6: CTA — "Try it today / Find grubpos.com now" ✓
-
-NOTE: Publish failed because the remote execution environment's network egress
-policy blocks outbound HTTPS to api.upload-post.com. To fix, add
-api.upload-post.com to the allowlist in the environment's network egress
-settings at https://code.claude.com/docs/en/claude-code-on-the-web
+Failure reason: The managed remote execution environment's network egress policy does not permit outbound connections to api.upload-post.com. To fix this, add api.upload-post.com to the network allowlist in the environment settings at https://code.claude.com/docs/en/claude-code-on-the-web.

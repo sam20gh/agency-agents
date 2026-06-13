@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-13T19:54:51.607Z",
-  "postCount": 4,
+  "updatedAt": "2026-06-13T20:01:02.615Z",
+  "postCount": 5,
   "history": [
     {
       "request_id": "46de587bce5c45ee85ca546d6c224402",
@@ -54,9 +54,28 @@
       "comments": 0,
       "shares": 0,
       "engagementRate": 0
+    },
+    {
+      "request_id": null,
+      "publishedAt": "2026-06-13T20:00:48.961Z",
+      "hour": "20",
+      "day": "Sat",
+      "hookCopy": "This is why your kitchen keeps falling behind",
+      "hookStyle": "bold-claim",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "engagementRate": 0
     }
   ],
   "bestHooks": [
+    {
+      "hook": "This is why your kitchen keeps falling behind",
+      "style": "bold-claim",
+      "views": 0,
+      "engagementRate": 0
+    },
     {
       "hook": "This is why your kitchen keeps falling behind",
       "style": "bold-claim",
@@ -97,18 +116,23 @@
       "value": "19",
       "avgViews": 0,
       "samples": 1
+    },
+    {
+      "value": "20",
+      "avgViews": 0,
+      "samples": 1
     }
   ],
   "bestDays": [
     {
       "value": "Sat",
       "avgViews": 0,
-      "samples": 4
+      "samples": 5
     }
   ],
   "hookStyleStats": {
     "bold-claim": {
-      "count": 4,
+      "count": 5,
       "avgViews": 0,
       "avgEngagement": 0
     }
@@ -123,6 +147,6 @@
   "profileSnapshot": {
     "followers": 0,
     "totalLikes": 0,
-    "fetchedAt": "2026-06-13T19:51:43.659Z"
+    "fetchedAt": "2026-06-13T19:58:53.579Z"
   }
 }
