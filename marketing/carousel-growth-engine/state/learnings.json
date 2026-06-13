@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-13T18:41:12.725Z",
-  "postCount": 2,
+  "updatedAt": "2026-06-13T18:56:58.277Z",
+  "postCount": 3,
   "history": [
     {
       "request_id": "46de587bce5c45ee85ca546d6c224402",
@@ -28,9 +28,28 @@
       "comments": 0,
       "shares": 0,
       "engagementRate": 0
+    },
+    {
+      "request_id": null,
+      "publishedAt": "2026-06-13T18:56:43.852Z",
+      "hour": "18",
+      "day": "Sat",
+      "hookCopy": "This is why your kitchen keeps falling behind",
+      "hookStyle": "bold-claim",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "engagementRate": 0
     }
   ],
   "bestHooks": [
+    {
+      "hook": "This is why your kitchen keeps falling behind",
+      "style": "bold-claim",
+      "views": 0,
+      "engagementRate": 0
+    },
     {
       "hook": "This is why your kitchen keeps falling behind",
       "style": "bold-claim",
@@ -53,30 +72,33 @@
     {
       "value": "18",
       "avgViews": 0,
-      "samples": 1
+      "samples": 2
     }
   ],
   "bestDays": [
     {
       "value": "Sat",
       "avgViews": 0,
-      "samples": 2
+      "samples": 3
     }
   ],
   "hookStyleStats": {
     "bold-claim": {
-      "count": 2,
+      "count": 3,
       "avgViews": 0,
       "avgEngagement": 0
     }
   },
   "avgEngagementRate": 0,
   "recommendations": [
-    "Not enough data yet — keep publishing daily to build the learning baseline (target: 10 posts)."
+    "Lead with a \"bold-claim\" hook — top performer: \"This is why your kitchen keeps falling behind\" (0 views).",
+    "Post around 15:00 UTC — best average reach (0 views, 1 samples).",
+    "Sat is your strongest day (0 avg views).",
+    "Engagement (0.0%) is below the 5% target — sharpen the hook and CTA, and make slide 1 more polarizing."
   ],
   "profileSnapshot": {
     "followers": 0,
     "totalLikes": 0,
-    "fetchedAt": "2026-06-13T18:38:25.924Z"
+    "fetchedAt": "2026-06-13T18:54:45.143Z"
   }
 }
