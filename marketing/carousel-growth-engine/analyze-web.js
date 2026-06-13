@@ -330,7 +330,8 @@ async function extractPage(page) {
 // ---- Main ------------------------------------------------------------------
 
 async function main() {
-  const browser = await chromium.launch({ headless: true });
+  const executablePath = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined;
+  const browser = await chromium.launch({ headless: true, ...(executablePath ? { executablePath } : {}) });
   const context = await browser.newContext({
     viewport: { width: 1366, height: 900 },
     ignoreHTTPSErrors: true, // some target sites have self-signed / misconfigured certs
