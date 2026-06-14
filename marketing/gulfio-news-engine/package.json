@@ -1,0 +1,12 @@
+{
+  "name": "gulfio-news-engine",
+  "version": "1.0.0",
+  "description": "Autonomous Instagram/TikTok news-carousel generator for Gulfio: fetches live Gulf & MENA news / football / weather from the Gulfio API, builds informative 6-slide app-download carousels with Gemini, publishes via Upload-Post, and learns from analytics.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "fetch": "node fetch-articles.js",
+    "category": "node pick-category.js",
+    "learn": "node learn-from-analytics.js"
+  }
+}

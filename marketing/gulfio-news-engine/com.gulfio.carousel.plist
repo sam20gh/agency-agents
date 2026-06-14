@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.gulfio.carousel</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/sam/Desktop/Grub24/grub24/backup/agency-agents/marketing/gulfio-news-engine/local-daily.sh</string>
+    </array>
+
+    <!-- Target: 12:00 noon UAE time (UTC+4) = 08:00 UTC, every day.
+         This Mac is on Europe/London, which observes DST while UAE does not, so
+         we fire at BOTH candidate London hours and let local-daily.sh's UAE-noon
+         guard decide which one actually runs:
+           · Winter (GMT,  UTC+0): 08:00 London = 12:00 UAE  → runs
+           · Summer (BST,  UTC+1): 09:00 London = 12:00 UAE  → runs
+         The other fire each day is one hour off in UAE and is skipped by the guard. -->
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict>
+            <key>Hour</key>
+            <integer>8</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+        <dict>
+            <key>Hour</key>
+            <integer>9</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+    </array>
+
+    <!-- Do not run when the plist is loaded; only on schedule -->
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/sam/Desktop/Grub24/grub24/backup/agency-agents/marketing/gulfio-news-engine/state/launchd.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/sam/Desktop/Grub24/grub24/backup/agency-agents/marketing/gulfio-news-engine/state/launchd.err.log</string>
+</dict>
+</plist>

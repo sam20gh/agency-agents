@@ -1,0 +1,12 @@
+node_modules/
+.env
+*.log
+# runtime artifacts (slides, articles, learnings) live in CAROUSEL_HOME (/tmp/gulfio)
+runs/
+articles.json
+learnings.json
+slide-*.jpg
+# ...except the persistent, repo-tracked state (learnings + last published
+# carousel: slides, caption, post-info, run-report).
+!state/
+!state/**

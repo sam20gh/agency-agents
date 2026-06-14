@@ -1,0 +1,136 @@
+{
+  "brand": "Gulfio",
+  "site": "gulfio.app",
+  "generatedAt": "2026-06-14T19:57:48.565Z",
+  "palette": [
+    {
+      "role": "Ink / Primary",
+      "hex": "#0B1E3B",
+      "use": "Headlines, backgrounds, the brand anchor — most frames are navy-dominant"
+    },
+    {
+      "role": "Accent / Gold",
+      "hex": "#E0B341",
+      "use": "Category tags, key-word highlights, CTA — one pop per frame (~10–15%)"
+    },
+    {
+      "role": "Support / Teal",
+      "hex": "#0E7C7B",
+      "use": "Secondary highlights, data viz, weather/sport accents"
+    },
+    {
+      "role": "Surface / Sand",
+      "hex": "#F4F1EA",
+      "use": "Light backgrounds, breathing room, explainer slides"
+    }
+  ],
+  "typography": {
+    "headingFamily": "Editorial Grotesk / bold modern sans",
+    "bodyFamily": "Clean humanist sans"
+  },
+  "mood": "authoritative regional-newsroom editorial — deep Gulf navy with a confident gold accent, subtle Arabian geometric motifs, real Gulf/MENA imagery (skylines, stadiums, desert, weather)",
+  "photography": [
+    "Real Gulf/MENA context — skylines (Dubai, Riyadh, Doha), stadiums, ports, desert, weather skies — not generic stock",
+    "Editorial news grade: confident contrast, deep navy shadows, warm gold highlights",
+    "Football: floodlit stadium energy; Weather: dramatic Gulf skies; News: city + regional landmarks",
+    "Respectful, apolitical imagery — no flags-as-opinion, no graphic content",
+    "Consistent treatment so any frame reads as Gulfio before the handle is seen"
+  ],
+  "graphics": [
+    "Small gold category tag near the top of every frame (BREAKING / FOOTBALL / WEATHER)",
+    "Bold headline overlay in Editorial Grotesk / bold modern sans, large and legible, top ~two-thirds",
+    "Keep the bottom 20% clear of text (IG UI + Reel caption safe zone)",
+    "One gold accent (#E0B341) per frame — a highlight, underline, or tag",
+    "Carousels share one visual DNA: slide 1 sets palette + type, slides 2–6 inherit it",
+    "9:16 for Reels/Stories, 4:5 for feed carousels (max vertical real estate)"
+  ],
+  "grid": [
+    {
+      "position": 1,
+      "row": 1,
+      "col": 1,
+      "pillar": "News",
+      "treatment": "Dark #0B1E3B background, gold BREAKING tag, big headline"
+    },
+    {
+      "position": 2,
+      "row": 1,
+      "col": 2,
+      "pillar": "Football",
+      "treatment": "Stadium photo, navy gradient, gold score/stat"
+    },
+    {
+      "position": 3,
+      "row": 1,
+      "col": 3,
+      "pillar": "Weather",
+      "treatment": "Gulf sky photo, teal/gold data overlay"
+    },
+    {
+      "position": 4,
+      "row": 2,
+      "col": 1,
+      "pillar": "AppValue",
+      "treatment": "Navy brand frame, gold CTA — \"Download Gulfio\""
+    },
+    {
+      "position": 5,
+      "row": 2,
+      "col": 2,
+      "pillar": "News",
+      "treatment": "Dark #0B1E3B background, gold BREAKING tag, big headline"
+    },
+    {
+      "position": 6,
+      "row": 2,
+      "col": 3,
+      "pillar": "Football",
+      "treatment": "Stadium photo, navy gradient, gold score/stat"
+    },
+    {
+      "position": 7,
+      "row": 3,
+      "col": 1,
+      "pillar": "Weather",
+      "treatment": "Gulf sky photo, teal/gold data overlay"
+    },
+    {
+      "position": 8,
+      "row": 3,
+      "col": 2,
+      "pillar": "AppValue",
+      "treatment": "Navy brand frame, gold CTA — \"Download Gulfio\""
+    },
+    {
+      "position": 9,
+      "row": 3,
+      "col": 3,
+      "pillar": "News",
+      "treatment": "Dark #0B1E3B background, gold BREAKING tag, big headline"
+    }
+  ],
+  "voice": {
+    "persona": "A trusted regional newsroom that talks like a sharp friend who already read everything — fast, factual, never breathless.",
+    "tone": [
+      "informative",
+      "credible",
+      "concise",
+      "regional",
+      "neutral-but-engaging"
+    ],
+    "do": [
+      "Lead with the fact, not the opinion — accuracy is the brand",
+      "Localise: name the Gulf/MENA country, city, club, or league it affects",
+      "One story per post; one clear 'download the app' close",
+      "Numbers and specifics over adjectives (scores, temperatures, dates)",
+      "Culturally aware, apolitical framing on sensitive topics"
+    ],
+    "dont": [
+      "Clickbait the article can't back up",
+      "Editorialising or taking political sides",
+      "Hashtag walls in the caption body",
+      "More than one CTA",
+      "Posting a claim that isn't in the source"
+    ]
+  }
+}

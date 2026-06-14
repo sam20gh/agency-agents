@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "updatedAt": "2026-06-14T20:22:27.142Z",
+  "postCount": 1,
+  "history": [
+    {
+      "request_id": "ffd5052a44f7435fb05d9ac4f26bcb81",
+      "publishedAt": "2026-06-14T20:22:11.964Z",
+      "hour": "20",
+      "day": "Sun",
+      "hookCopy": "Review: Rijal Almaa Heritage Village",
+      "hookStyle": "bold-claim",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "engagementRate": 0
+    }
+  ],
+  "bestHooks": [
+    {
+      "hook": "Review: Rijal Almaa Heritage Village",
+      "style": "bold-claim",
+      "views": 0,
+      "engagementRate": 0
+    }
+  ],
+  "bestTimes": [
+    {
+      "value": "20",
+      "avgViews": 0,
+      "samples": 1
+    }
+  ],
+  "bestDays": [
+    {
+      "value": "Sun",
+      "avgViews": 0,
+      "samples": 1
+    }
+  ],
+  "hookStyleStats": {
+    "bold-claim": {
+      "count": 1,
+      "avgViews": 0,
+      "avgEngagement": 0
+    }
+  },
+  "avgEngagementRate": 0,
+  "recommendations": [
+    "Not enough data yet — keep publishing daily to build the learning baseline (target: 10 posts)."
+  ],
+  "profileSnapshot": {
+    "followers": 0,
+    "totalLikes": 0,
+    "fetchedAt": "2026-06-14T20:14:03.369Z"
+  }
+}

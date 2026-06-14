@@ -1,0 +1,13 @@
+{
+  "name": "gulfio-instagram-curator",
+  "version": "1.0.0",
+  "description": "Gulfio Instagram Curator strategy toolkit: brand aesthetic guide, 30-day 4-pillar (News/Football/Weather/AppValue) content calendar, tiered hashtag strategy, and Story-highlights plan. Deterministic (no API keys). The calendar drives the Gulfio News Engine's daily content pillar.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "aesthetic": "node aesthetic-guide.js",
+    "calendar": "node content-calendar.js",
+    "hashtags": "node hashtag-strategy.js",
+    "highlights": "node highlights-plan.js"
+  }
+}

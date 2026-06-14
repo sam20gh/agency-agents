@@ -1,0 +1,70 @@
+{
+  "brand": "Gulfio",
+  "generatedAt": "2026-06-14T19:57:48.826Z",
+  "coverSystem": {
+    "style": "Flat gold icons on the navy brand background — one consistent set so the tray reads as a designed row, not a scrapbook.",
+    "rule": "Same icon weight, same navy background, same gold accent across all covers. Name each highlight in ≤12 chars so it doesn't truncate."
+  },
+  "highlights": [
+    {
+      "name": "Start Here",
+      "icon": "▶︎ play / Gulfio mark",
+      "purpose": "30-second 'what Gulfio is' for first-time visitors",
+      "feeds": [
+        "What Gulfio covers (news + football + weather)",
+        "Link sticker → gulfio.app"
+      ]
+    },
+    {
+      "name": "Top Stories",
+      "icon": "📰 newspaper",
+      "purpose": "The best of this week's Gulf & MENA news — proof the feed is fresh",
+      "feeds": [
+        "Daily headline cards",
+        "Trending regional stories",
+        "Why it matters explainers"
+      ]
+    },
+    {
+      "name": "Football",
+      "icon": "⚽ ball",
+      "purpose": "Show the live scores / fixtures / tables coverage",
+      "feeds": [
+        "Matchday previews",
+        "Full-time results",
+        "League tables",
+        "Transfer news"
+      ]
+    },
+    {
+      "name": "Weather",
+      "icon": "☀︎ sun / cloud",
+      "purpose": "City-by-city Gulf forecasts and heat alerts",
+      "feeds": [
+        "Daily temps",
+        "Heat/storm alerts",
+        "Weekend outlook"
+      ]
+    },
+    {
+      "name": "Why Gulfio",
+      "icon": "★ star",
+      "purpose": "The pitch: one trusted app for the whole region",
+      "feeds": [
+        "All-in-one explainer",
+        "Speed/accuracy proof",
+        "User reactions / UGC"
+      ]
+    },
+    {
+      "name": "Get the App",
+      "icon": "→ arrow / download",
+      "purpose": "The conversion highlight — always the last thing they tap",
+      "feeds": [
+        "App walkthrough",
+        "Link sticker → gulfio.app",
+        "App Store / Play badges"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+node_modules/
+.env
+*.log
+# generated deliverables are regenerated monthly; keep the latest in the repo so
+# the news engine can read today's pillar from out/<brand>/calendar.json
+!out/
+!out/**
+!state/
+!state/**
