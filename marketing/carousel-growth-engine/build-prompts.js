@@ -59,7 +59,7 @@ const CAMPAIGNS = [
     solution: "Meet GrubPos",
     solutionSub: "One system for your whole operation",
     feature: "Every order in one place",
-    proof: "Trusted by 4000s of restaurants",
+    proof: "Trusted by 4,000+ restaurants",
     cta: "Book a free demo",
     tag: "#epos",
   },
