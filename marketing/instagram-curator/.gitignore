@@ -1,6 +1,9 @@
 # Generated deliverables (regenerate with ./curate.sh)
 out/
 
+# launchd logs from the monthly calendar job
+state/
+
 # Secrets
 .env
 

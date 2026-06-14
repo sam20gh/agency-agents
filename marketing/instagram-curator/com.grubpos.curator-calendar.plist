@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.grubpos.curator-calendar</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/sam/Desktop/Grub24/grub24/backup/agency-agents/marketing/instagram-curator/monthly-calendar.sh</string>
+    </array>
+
+    <!-- Monthly: 1st of each month at 06:00 local time. Runs well before the
+         18:00 daily carousel job, so the fresh calendar is ready that evening. -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Day</key>
+        <integer>1</integer>
+        <key>Hour</key>
+        <integer>6</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <!-- Do not run when the plist is loaded; only on schedule -->
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/sam/Desktop/Grub24/grub24/backup/agency-agents/marketing/instagram-curator/state/launchd.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/sam/Desktop/Grub24/grub24/backup/agency-agents/marketing/instagram-curator/state/launchd.err.log</string>
+</dict>
+</plist>
