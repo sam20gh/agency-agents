@@ -94,3 +94,149 @@ slide-6: PASS
  DONE. Artifacts in: /tmp/carousel/runs/20260613-212148
 ================================================================
 Daily run end (0): 2026-06-13T20:25:58Z
+===== MANUAL CATCH-UP RUN 17:50:12Z =====
+================================================================
+Daily run start: 2026-06-14T17:50:12Z
+================================================================
+ Carousel Growth Engine — 20260614-185012
+ URL: https://grubpos.com | mode: full | run: /tmp/carousel/runs/20260614-185012
+================================================================
+>> Phase 1: Learn from history
+[analytics] Fetching profile analytics ...
+[analytics] Fetching impressions breakdown ...
+[analytics] Fetching per-post analytics for db023110241a428a80952ed1a2c48bac ...
+[analytics] Wrote /tmp/carousel/runs/20260614-185012/analytics.json
+[learn] posts=6 avgEng=0 bestHook="This is why your kitchen keeps falling behind" bestTime=15h
+[learn] rec: Lead with a "bold-claim" hook — top performer: "This is why your kitchen keeps falling behind" (0 views).
+[learn] rec: Post around 15:00 UTC — best average reach (0 views, 1 samples).
+[learn] rec: Sat is your strongest day (0 avg views).
+[learn] rec: Engagement (0.0%) is below the 5% target — sharpen the hook and CTA, and make slide 1 more polarizing.
+>> Phase 2: Research https://grubpos.com
+[analyze] Loading https://grubpos.com ...
+[analyze] Visiting internal page https://grubpos.com/customers/ ...
+[analyze] Visiting internal page https://grubpos.com/pricing/ ...
+[analyze] Visiting internal page https://grubpos.com/features/ ...
+[analyze] Visiting internal page https://grubpos.com/about/ ...
+[analyze] Wrote /tmp/carousel/runs/20260614-185012/analysis.json
+[analyze] Brand: Grub24 | Niche: restaurant-tech | Competitors: none
+>> Phase 3: Generate slides
+[slides] Building prompts ...
+[prompts] campaign source: calendar Brand day 2026-06-14 → GrubPos
+[prompts] campaign=platform (GrubPos) hook="Running 5 systems to run one restaurant?" | rotation=6 | tags: #fyp #foryou #restaurant #hospitality #restaurantlife #epos #grubpos
+[slides] Generating slide 1 (visual DNA) ...
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260614-185012/slide-1.jpg i2i=False
+[gemini] saved /tmp/carousel/runs/20260614-185012/slide-1.jpg (768x1376)
+[slides] Generating slide 2 (i2i from slide-1) ...
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260614-185012/slide-2.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260614-185012/slide-2.jpg (768x1376)
+[slides] Generating slide 3 (i2i from slide-1) ...
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260614-185012/slide-3.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260614-185012/slide-3.jpg (768x1376)
+[slides] Generating slide 4 (i2i from slide-1) ...
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260614-185012/slide-4.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260614-185012/slide-4.jpg (768x1376)
+[slides] Generating slide 5 (i2i from slide-1) ...
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260614-185012/slide-5.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260614-185012/slide-5.jpg (768x1376)
+[slides] Generating slide 6 (i2i from slide-1) ...
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260614-185012/slide-6.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260614-185012/slide-6.jpg (768x1376)
+[slides] Done. 6 slides in /tmp/carousel/runs/20260614-185012
+/tmp/carousel/runs/20260614-185012/slide-1.jpg
+/tmp/carousel/runs/20260614-185012/slide-2.jpg
+/tmp/carousel/runs/20260614-185012/slide-3.jpg
+/tmp/carousel/runs/20260614-185012/slide-4.jpg
+/tmp/carousel/runs/20260614-185012/slide-5.jpg
+/tmp/carousel/runs/20260614-185012/slide-6.jpg
+>> Phase 3b: Vision QA (regenerating any weak slides)
+slide-1: PASS
+slide-2: regenerating (try 1/3) — reason: Readable text from the point-of-sale screens and receipts is present in the bottom ~20% of the image.
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260614-185012/slide-2.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260614-185012/slide-2.jpg (768x1376)
+slide-2: regenerating (try 2/3) — reason: Headline text is missing words ('don't') and misspelled ('orde's' instead of 'orders').
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260614-185012/slide-2.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260614-185012/slide-2.jpg (768x1376)
+slide-2: PASS (after 2 regen)
+slide-3: regenerating (try 1/3) — reason: Readable text ('Ubereats', 'DOORDASH') is present in the bottom ~20% of the image.
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260614-185012/slide-3.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260614-185012/slide-3.jpg (768x1376)
+slide-3: regenerating (try 2/3) — reason: Readable text from receipts is present in the bottom ~20% of the image.
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260614-185012/slide-3.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260614-185012/slide-3.jpg (768x1376)
+slide-3: regenerating (try 3/3) — reason: Readable text found in the bottom ~20% of the image on receipts and ledgers.
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260614-185012/slide-3.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260614-185012/slide-3.jpg (768x1376)
+slide-3: PASS (after 3 regen)
+slide-4: regenerating (try 1/3) — reason: Fake app UI is present on the tablet.
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/carousel/runs/20260614-185012/slide-4.jpg i2i=True
+[gemini] saved /tmp/carousel/runs/20260614-185012/slide-4.jpg (768x1376)
+slide-4: PASS (after 1 regen)
+slide-5: PASS
+slide-6: PASS
+[qa] report written to /tmp/carousel/runs/20260614-185012/qa-report.txt
+[qa] all slides passed
+>> Phase 4: Publish
+[publish] Uploading 6 slides to: instagram ...
+[publish] request_id=9473270baaa94f21a8b86de6f1db323b
+[publish] Wrote /tmp/carousel/runs/20260614-185012/post-info.json
+[learn] posts=7 avgEng=0 bestHook="This is why your kitchen keeps falling behind" bestTime=15h
+[learn] rec: Lead with a "bold-claim" hook — top performer: "This is why your kitchen keeps falling behind" (0 views).
+[learn] rec: Hook style "bold-claim" averages 0 views vs "question" at 0. Favor the former.
+[learn] rec: Post around 15:00 UTC — best average reach (0 views, 1 samples).
+[learn] rec: Sat is your strongest day (0 avg views).
+[learn] rec: Engagement (0.0%) is below the 5% target — sharpen the hook and CTA, and make slide 1 more polarizing.
+================================================================
+ DONE. Artifacts in: /tmp/carousel/runs/20260614-185012
+================================================================
+Daily run end (0): 2026-06-14T17:54:13Z
+================================================================
+Daily run start: 2026-06-14T18:04:12Z
+================================================================
+ Carousel Growth Engine — 20260614-190413
+ URL: https://grubpos.com | mode: full | run: /tmp/carousel/runs/20260614-190413
+================================================================
+>> Phase 1: Learn from history
+[analytics] Fetching profile analytics ...
+[analytics] Fetching impressions breakdown ...
+[analytics] Wrote /tmp/carousel/runs/20260614-190413/analytics.json
+node:internal/fs/utils:356
+    throw err;
+    ^
+
+Error: EPERM: operation not permitted, open '/Users/sam/Desktop/Grub24/grub24/backup/agency-agents/marketing/carousel-growth-engine/learn-from-analytics.js'
+    at Object.openSync (node:fs:596:3)
+    at Object.readFileSync (node:fs:464:35)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1385:18)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -1,
+  syscall: 'open',
+  code: 'EPERM',
+  path: '/Users/sam/Desktop/Grub24/grub24/backup/agency-agents/marketing/carousel-growth-engine/learn-from-analytics.js'
+}
+
+Node.js v18.20.8
+[run] learning step failed (continuing)
+>> Phase 2: Research https://grubpos.com
+node:internal/fs/utils:356
+    throw err;
+    ^
+
+Error: EPERM: operation not permitted, open '/Users/sam/Desktop/Grub24/grub24/backup/agency-agents/marketing/carousel-growth-engine/analyze-web.js'
+    at Object.openSync (node:fs:596:3)
+    at Object.readFileSync (node:fs:464:35)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1385:18)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -1,
+  syscall: 'open',
+  code: 'EPERM',
+  path: '/Users/sam/Desktop/Grub24/grub24/backup/agency-agents/marketing/carousel-growth-engine/analyze-web.js'
+}
+
+Node.js v18.20.8
+Daily run end (1): 2026-06-14T18:04:14Z

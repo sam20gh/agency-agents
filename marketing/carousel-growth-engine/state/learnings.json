@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-13T20:25:58.271Z",
-  "postCount": 6,
+  "updatedAt": "2026-06-14T17:54:13.680Z",
+  "postCount": 7,
   "history": [
     {
       "request_id": "46de587bce5c45ee85ca546d6c224402",
@@ -80,6 +80,19 @@
       "comments": 0,
       "shares": 0,
       "engagementRate": 0
+    },
+    {
+      "request_id": "9473270baaa94f21a8b86de6f1db323b",
+      "publishedAt": "2026-06-14T17:54:13.607Z",
+      "hour": "17",
+      "day": "Sun",
+      "hookCopy": "Running 5 systems to run one restaurant?",
+      "hookStyle": "question",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "engagementRate": 0
     }
   ],
   "bestHooks": [
@@ -121,6 +134,11 @@
       "samples": 1
     },
     {
+      "value": "17",
+      "avgViews": 0,
+      "samples": 1
+    },
+    {
       "value": "18",
       "avgViews": 0,
       "samples": 2
@@ -141,6 +159,11 @@
       "value": "Sat",
       "avgViews": 0,
       "samples": 6
+    },
+    {
+      "value": "Sun",
+      "avgViews": 0,
+      "samples": 1
     }
   ],
   "hookStyleStats": {
@@ -148,11 +171,17 @@
       "count": 6,
       "avgViews": 0,
       "avgEngagement": 0
+    },
+    "question": {
+      "count": 1,
+      "avgViews": 0,
+      "avgEngagement": 0
     }
   },
   "avgEngagementRate": 0,
   "recommendations": [
     "Lead with a \"bold-claim\" hook — top performer: \"This is why your kitchen keeps falling behind\" (0 views).",
+    "Hook style \"bold-claim\" averages 0 views vs \"question\" at 0. Favor the former.",
     "Post around 15:00 UTC — best average reach (0 views, 1 samples).",
     "Sat is your strongest day (0 avg views).",
     "Engagement (0.0%) is below the 5% target — sharpen the hook and CTA, and make slide 1 more polarizing."
@@ -160,6 +189,6 @@
   "profileSnapshot": {
     "followers": 0,
     "totalLikes": 0,
-    "fetchedAt": "2026-06-13T20:21:51.324Z"
+    "fetchedAt": "2026-06-14T17:50:15.113Z"
   }
 }
