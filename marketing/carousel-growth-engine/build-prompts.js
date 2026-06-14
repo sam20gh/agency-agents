@@ -17,7 +17,10 @@
  */
 
 import { readFileSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const HERE = dirname(fileURLToPath(import.meta.url));
 
 const analysisPath = process.argv[2];
 const runDir = process.argv[3];
@@ -127,9 +130,15 @@ const CAMPAIGNS = [
   },
 ];
 
-// Rotate by how many posts already exist so consecutive runs never repeat.
+// ---- Campaign selection: Instagram Curator calendar, then rotation ---------
+// If the Curator's 30-day calendar exists, today's planned Brand-pillar entry
+// drives this post so the carousel matches the published plan. When there's no
+// calendar (or today isn't a Brand day), fall back to blind rotation by how many
+// posts already exist, so consecutive runs never repeat.
 const rotation = Number.isFinite(learnings?.history?.length) ? learnings.history.length : 0;
-const c = CAMPAIGNS[rotation % CAMPAIGNS.length];
+const planned = pickFromCalendar();
+const c = planned.campaign || CAMPAIGNS[rotation % CAMPAIGNS.length];
+console.error(`[prompts] campaign source: ${planned.reason}`);
 
 const hookCopy = c.hook;
 const hookStyle = classifyHookStyle(hookCopy);
@@ -235,6 +244,32 @@ writeFileSync(join(runDir, "title.txt"), `${title} ${titleTags}`.trim().slice(0,
 console.error(`[prompts] campaign=${c.id} (${c.product}) hook="${c.hook}" | rotation=${rotation} | tags: ${tags.join(" ")}`);
 
 // ---- helpers ----------------------------------------------------------------
+
+/**
+ * Look up today's entry in the Instagram Curator's 30-day calendar.json.
+ * Returns the matching GrubPos campaign on a Brand-pillar day, else null (so the
+ * caller falls back to rotation). Path: $CALENDAR_FILE, else the Curator's
+ * out/<brand-slug>/calendar.json next to this engine. Missing file = no-op.
+ */
+function pickFromCalendar() {
+  const slug = brand.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const calPath =
+    process.env.CALENDAR_FILE ||
+    join(HERE, "..", "instagram-curator", "out", slug, "calendar.json");
+  try {
+    const cal = JSON.parse(readFileSync(calPath, "utf8"));
+    const today = new Date().toISOString().slice(0, 10);
+    const entry = (cal.days || []).find((d) => d.date === today);
+    if (!entry) return { campaign: null, reason: `no calendar entry for ${today} — rotation` };
+    if (entry.campaignId) {
+      const match = CAMPAIGNS.find((x) => x.id === entry.campaignId);
+      if (match) return { campaign: match, reason: `calendar Brand day ${today} → ${match.product}` };
+    }
+    return { campaign: null, reason: `calendar ${entry.pillar} day ${today} (no Brand campaign) — rotation` };
+  } catch {
+    return { campaign: null, reason: "no Curator calendar — rotation" };
+  }
+}
 
 function describeFont(stack) {
   const s = (stack || "").toLowerCase();

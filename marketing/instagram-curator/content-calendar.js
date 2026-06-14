@@ -33,7 +33,9 @@ if (!analysisPath || !outDir) {
 }
 mkdirSync(outDir, { recursive: true });
 
-const a = JSON.parse(readFileSync(analysisPath, "utf8"));
+// Validate the research file exists / is valid JSON (the calendar's copy is
+// curated, so we don't read fields from it — but we keep the contract).
+JSON.parse(readFileSync(analysisPath, "utf8"));
 let learnings = null;
 if (learningsPath) {
   try {
@@ -43,9 +45,11 @@ if (learningsPath) {
   }
 }
 
-// Proof points: real stats from the scrape if present, else curated.
-const scrapedStats = (a.content?.stats || []).filter((s) => /%|k|m|x|\+|£|\$/i.test(s)).slice(0, 4);
-const proof = scrapedStats.length ? scrapedStats.join(" · ") : "Thousands of restaurants · Commission-free";
+// Proof points: CURATED, never scraped. Like the carousel engine's
+// build-prompts.js, scraped numbers (fees, rates, percentages off the pricing
+// page) must NOT become claims — they read as nonsense out of context. Set a
+// verified proof line via PROOF_LINE when you have one.
+const proof = process.env.PROOF_LINE || "Thousands of restaurants · Commission-free ordering";
 
 // ---- Best posting hour -----------------------------------------------------
 // Reuse the carousel engine's learned best hour if available; else weekday map.

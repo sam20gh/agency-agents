@@ -66,6 +66,23 @@ Run once per day via cron (uses the self-learned best hour over time):
 0 18 * * *  cd /path/to/carousel-growth-engine && ./run.sh https://example.com >> /tmp/carousel/run.log 2>&1
 ```
 
+## Pairing with the Instagram Curator
+
+The [`instagram-curator`](../instagram-curator/) toolkit is the *strategist* — it
+plans the 30-day content calendar (which pillar, product, and time to post each
+day). This engine is the *executor*.
+
+`build-prompts.js` automatically aligns to that plan: if a Curator
+`calendar.json` exists, **today's Brand-pillar entry selects the campaign** for
+the daily carousel (instead of blind rotation). It looks for, in order:
+
+1. `$CALENDAR_FILE` (explicit path), then
+2. `../instagram-curator/out/<brand-slug>/calendar.json` (default).
+
+If there's no calendar, or today isn't a Brand day, it falls back to the usual
+rotation — so this is fully backward-compatible. Watch the `[prompts] campaign
+source:` log line to see which path fired.
+
 ## Notes & caveats
 
 - **Vision verification is a human/agent step.** `generate-slides.sh` produces the
