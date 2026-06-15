@@ -48,6 +48,10 @@ const pillar = data.pillar || "News";
 const article = data.selected || null;
 const arc = ARCS[pillar] || ARCS.News;
 
+// Per-slide character budget for the middle (content) slides. Big enough for a
+// whole short/medium sentence; long sentences flow onto the next slide.
+const MAX_SLIDE_CHARS = 140;
+
 // ---- Build the 6 slide copies ----------------------------------------------
 let slideCopy; // [slide1..slide5] strings; slide 6 (CTA) added below
 let appCta;
@@ -57,21 +61,30 @@ let categoryLabel;
 
 if (article) {
   categoryLabel = labelFor(pillar, article);
-  const facts = extractFacts(article, 4);
-  const headline = truncate(article.title, 80);
+  const headline = truncate(article.title, 90);
 
+  // Paginate the article lede into up to 4 CONTINUOUS slides. Breaks happen only
+  // at word boundaries (preferring sentence ends), never mid-word and never with
+  // an ellipsis — so a long sentence simply continues on the next slide and
+  // slides 2→5 read as one coherent passage. Use body (the full text) — summary
+  // is derived from body, so concatenating them would duplicate text. Strip a
+  // leading news dateline like "Baghdad (IraqiNews.com) – " for a clean opener.
+  const lede = (article.body || article.summary || "")
+    .replace(/^\s*[A-Z][A-Za-z .,'’-]{0,40}\([^)]{1,50}\)\s*[–—-]\s*/, "")
+    .trim();
+  const pages = paginate(lede, 4, MAX_SLIDE_CHARS);
   slideCopy = [
     headline, // Slide 1 — headline
-    facts[0] || truncate(article.summary, 70) || "Here's what we know so far",
-    facts[1] || sourceLine(article),
-    facts[2] || whyItMatters(pillar),
-    facts[3] || "There's more to this story",
+    pages[0] || article.summary || "Here's what we know so far",
+    pages[1] || sourceLine(article),
+    pages[2] || whyItMatters(pillar),
+    pages[3] || `Read the full story on ${BRAND.app}`,
   ];
 
   appCta = rotate(BRAND.appCtas, rotation);
   captionBody =
     `${categoryLabel ? categoryLabel + ": " : ""}${article.title}\n\n` +
-    `${truncate(article.summary || facts.join(". "), 280)}\n\n` +
+    `${truncate(article.summary || pages.join(" "), 280)}\n\n` +
     `📲 ${appCta} → ${BRAND.site}` +
     (article.source ? `\n\nvia ${article.source}` : "");
   hashTags = buildHashtags(pillar, article);
@@ -140,12 +153,16 @@ const slideExtras = [
 ];
 
 const allCopy = [...slideCopy, slide6];
+// Headline gets a tight cap; content slides are already sized by paginate(), so
+// the cap here is only a safety net (must exceed MAX_SLIDE_CHARS so it never
+// re-truncates a clean page back into an ellipsis fragment).
+const capFor = (i) => (i === 0 ? 90 : MAX_SLIDE_CHARS + 20);
 const slides = allCopy.map((copy, i) => ({
   index: i + 1,
   role: arc[i] || (i === 5 ? "CTA" : `Slide ${i + 1}`),
-  copy: truncate(copy, i === 0 ? 90 : 88),
+  copy: truncate(copy, capFor(i)),
   ...(i === 0 ? { hookStyle } : {}),
-  imagePrompt: slidePrompt(arc[i] || "CTA", truncate(copy, i === 0 ? 90 : 88), slideExtras[i]),
+  imagePrompt: slidePrompt(arc[i] || "CTA", truncate(copy, capFor(i)), slideExtras[i]),
 }));
 
 writeFileSync(
@@ -206,31 +223,41 @@ function sourceLine(a) {
 }
 
 /**
- * Pull up to `n` informative fact-lines from the article, in document order.
- * News writing is inverted-pyramid: the lede + first body sentences ARE the key
- * facts, so order beats keyword scoring. The summary comes first (it's the
- * lede), then body sentences fill any gap. Each line is a COMPLETE sentence,
- * trimmed to a slide-legible length on a word boundary by the caller.
+ * Paginate continuous text into up to `maxPages` slide-sized chunks.
+ *
+ * The text (the article lede) is read as one stream and split ONLY at word
+ * boundaries — never mid-word, never with an ellipsis. A page is flushed when:
+ *   - adding the next word would exceed `maxChars` (hard wrap at a word boundary), or
+ *   - the current word ends a sentence AND the page is already reasonably full
+ *     (≥60% of budget) — a clean, natural break.
+ *
+ * The effect: each slide holds a coherent chunk, and when a sentence is too long
+ * for one slide it simply continues on the next, so reading the slides in order
+ * reconstructs the passage with no broken fragments.
  */
-function extractFacts(a, n) {
-  // Summary first (the lede), then body — de-duplicated, in order.
-  const text = `${a.summary || ""} ${a.body || ""}`.replace(/\s+/g, " ").trim();
-  if (!text) return [];
-  const sentences = text
-    .split(/(?<=[.!?])\s+(?=[A-Z0-9“"'])/)
-    .map((s) => s.trim())
-    .filter((s) => s.length >= 25 && s.length <= 220);
-
-  const seen = new Set();
-  const ordered = [];
-  for (const s of sentences) {
-    const key = s.slice(0, 40).toLowerCase();
-    if (seen.has(key)) continue;
-    seen.add(key);
-    ordered.push(s);
-    if (ordered.length >= n) break;
+function paginate(text, maxPages, maxChars) {
+  const clean = String(text || "").replace(/\s+/g, " ").trim();
+  if (!clean) return [];
+  const words = clean.split(" ");
+  const pages = [];
+  let cur = "";
+  const endsSentence = (w) => /[.!?]["'”’)]?$/.test(w);
+  for (const w of words) {
+    if (pages.length >= maxPages) break;
+    const tentative = cur ? `${cur} ${w}` : w;
+    if (tentative.length > maxChars && cur) {
+      pages.push(cur);
+      cur = w;
+    } else {
+      cur = tentative;
+    }
+    if (cur && endsSentence(w) && cur.length >= maxChars * 0.6) {
+      pages.push(cur);
+      cur = "";
+    }
   }
-  return ordered;
+  if (cur && pages.length < maxPages) pages.push(cur);
+  return pages.slice(0, maxPages).map((p) => p.trim());
 }
 
 function pickPromo(p, i) {
