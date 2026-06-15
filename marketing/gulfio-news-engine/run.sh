@@ -33,8 +33,15 @@ for arg in "$@"; do
   esac
 done
 
-# Load .env if present (does not override already-set vars).
+# Load .env if present.
 if [[ -f "$HERE/.env" ]]; then set -a; source "$HERE/.env"; set +a; fi
+
+# Gulfio ALWAYS publishes to its own Upload-Post account — never the GrubPos one.
+# Sourcing .env above sets UPLOADPOST_USER to the shared default (grubpos), so we
+# re-assert the Gulfio account here. This must happen after the source, or the
+# carousel ends up on the wrong channel regardless of how run.sh was invoked.
+export UPLOADPOST_USER="${UPLOADPOST_USER_GULFIO:-${UPLOADPOST_USER:-}}"
+export UPLOADPOST_PLATFORMS="${UPLOADPOST_PLATFORMS:-instagram}"
 
 CAROUSEL_HOME="${CAROUSEL_HOME:-/tmp/gulfio}"
 LEARNINGS="${LEARNINGS_FILE:-$CAROUSEL_HOME/learnings.json}"
