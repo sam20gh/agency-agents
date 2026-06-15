@@ -1,2 +1,53 @@
 [2026-06-14T20:31:18Z] skip: UAE hour is 00 (want 12)
 [2026-06-15T07:48:05Z] skip: UAE hour is 11 (want 12)
+================================================================
+Daily run start: 2026-06-15T08:00:04Z (UAE noon, 2026-06-15)
+================================================================
+ Gulfio News Engine — 20260615-090004
+ pillar: News | mode: full | run: /tmp/gulfio/runs/20260615-090004
+================================================================
+>> Phase 1: Learn from history
+[analytics] Fetching profile analytics ...
+[analytics] Fetching impressions breakdown ...
+[analytics] Wrote /tmp/gulfio/runs/20260615-090004/analytics.json
+node:internal/fs/utils:356
+    throw err;
+    ^
+
+Error: EPERM: operation not permitted, open '/Users/sam/Desktop/Grub24/grub24/backup/agency-agents/marketing/gulfio-news-engine/learn-from-analytics.js'
+    at Object.openSync (node:fs:596:3)
+    at Object.readFileSync (node:fs:464:35)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1385:18)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -1,
+  syscall: 'open',
+  code: 'EPERM',
+  path: '/Users/sam/Desktop/Grub24/grub24/backup/agency-agents/marketing/gulfio-news-engine/learn-from-analytics.js'
+}
+
+Node.js v18.20.8
+[run] learning step failed (continuing)
+>> Phase 2: Fetch article (News)
+node:internal/fs/utils:356
+    throw err;
+    ^
+
+Error: EPERM: operation not permitted, open '/Users/sam/Desktop/Grub24/grub24/backup/agency-agents/marketing/gulfio-news-engine/fetch-articles.js'
+    at Object.openSync (node:fs:596:3)
+    at Object.readFileSync (node:fs:464:35)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1385:18)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -1,
+  syscall: 'open',
+  code: 'EPERM',
+  path: '/Users/sam/Desktop/Grub24/grub24/backup/agency-agents/marketing/gulfio-news-engine/fetch-articles.js'
+}
+
+Node.js v18.20.8
+Daily run end (1): 2026-06-15T08:00:06Z
