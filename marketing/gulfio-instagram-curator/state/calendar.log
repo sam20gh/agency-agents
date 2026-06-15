@@ -1,0 +1,26 @@
+================================================================
+Monthly calendar regen start: 2026-06-15T09:07:33Z
+================================================================
+ Gulfio Instagram Curator — Gulfio
+ out: /Users/sam/Grub24/agency-agents/marketing/gulfio-instagram-curator/out/gulfio
+================================================================
+>> Phase 1: Aesthetic guide
+[aesthetic] palette: #0B1E3B #E0B341 #0E7C7B #F4F1EA | ink=#0B1E3B accent=#E0B341
+[aesthetic] wrote /Users/sam/Grub24/agency-agents/marketing/gulfio-instagram-curator/out/gulfio/aesthetic.md
+>> Phase 2: 30-day content calendar
+[calendar] 30 days | mix {"News":13,"Football":9,"Weather":4,"AppValue":4} | time weekday-default
+[calendar] wrote /Users/sam/Grub24/agency-agents/marketing/gulfio-instagram-curator/out/gulfio/calendar.md
+>> Phase 3: Hashtag strategy
+[hashtags] sets: News, Football, Weather, AppValue
+[hashtags] wrote /Users/sam/Grub24/agency-agents/marketing/gulfio-instagram-curator/out/gulfio/hashtags.md
+>> Phase 4: Story highlights plan
+[highlights] 6 highlights | conversion: Get the App
+[highlights] wrote /Users/sam/Grub24/agency-agents/marketing/gulfio-instagram-curator/out/gulfio/highlights.md
+================================================================
+ DONE. Deliverables in: /Users/sam/Grub24/agency-agents/marketing/gulfio-instagram-curator/out/gulfio
+   /Users/sam/Grub24/agency-agents/marketing/gulfio-instagram-curator/out/gulfio/aesthetic.md
+   /Users/sam/Grub24/agency-agents/marketing/gulfio-instagram-curator/out/gulfio/calendar.md
+   /Users/sam/Grub24/agency-agents/marketing/gulfio-instagram-curator/out/gulfio/hashtags.md
+   /Users/sam/Grub24/agency-agents/marketing/gulfio-instagram-curator/out/gulfio/highlights.md
+================================================================
+Monthly calendar regen end (0): 2026-06-15T09:07:33Z

@@ -51,3 +51,76 @@ Error: EPERM: operation not permitted, open '/Users/sam/Desktop/Grub24/grub24/ba
 
 Node.js v18.20.8
 Daily run end (1): 2026-06-15T08:00:06Z
+================================================================
+Daily run start: 2026-06-15T09:08:05Z (UAE noon, 2026-06-15)
+================================================================
+ Gulfio News Engine — 20260615-100805
+ pillar: News | mode: full | run: /tmp/gulfio/runs/20260615-100805
+================================================================
+>> Phase 1: Learn from history
+[analytics] Fetching profile analytics ...
+[analytics] Fetching impressions breakdown ...
+[analytics] Fetching per-post analytics for ffd5052a44f7435fb05d9ac4f26bcb81 ...
+[analytics] Wrote /tmp/gulfio/runs/20260615-100805/analytics.json
+[learn] posts=1 avgEng=0 bestHook="Review: Rijal Almaa Heritage Village" bestTime=20h
+[learn] rec: Not enough data yet — keep publishing daily to build the learning baseline (target: 10 posts).
+>> Phase 2: Fetch article (News)
+[fetch] pillar=News | selected: "Oman-Pakistan Friendship Association established" | live API — 10 candidate(s) in News, offset 0
+>> Phase 3: Generate slides
+[slides] Building prompts ...
+[prompts] pillar=News hook="Oman-Pakistan Friendship Association established" style=bold-claim rotation=1 | tags: #news #breakingnews #gulf #mena #uae #oman #gulfio #gulfioapp
+[slides] Generating slide 1 (visual DNA) ...
+Installed 6 packages in 14ms
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/gulfio/runs/20260615-100805/slide-1.jpg i2i=False
+[gemini] saved /tmp/gulfio/runs/20260615-100805/slide-1.jpg (768x1376)
+[slides] Generating slide 2 (i2i from slide-1) ...
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/gulfio/runs/20260615-100805/slide-2.jpg i2i=True
+[gemini] saved /tmp/gulfio/runs/20260615-100805/slide-2.jpg (768x1376)
+[slides] Generating slide 3 (i2i from slide-1) ...
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/gulfio/runs/20260615-100805/slide-3.jpg i2i=True
+[gemini] saved /tmp/gulfio/runs/20260615-100805/slide-3.jpg (768x1376)
+[slides] Generating slide 4 (i2i from slide-1) ...
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/gulfio/runs/20260615-100805/slide-4.jpg i2i=True
+[gemini] saved /tmp/gulfio/runs/20260615-100805/slide-4.jpg (768x1376)
+[slides] Generating slide 5 (i2i from slide-1) ...
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/gulfio/runs/20260615-100805/slide-5.jpg i2i=True
+[gemini] saved /tmp/gulfio/runs/20260615-100805/slide-5.jpg (768x1376)
+[slides] Generating slide 6 (i2i from slide-1) ...
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/gulfio/runs/20260615-100805/slide-6.jpg i2i=True
+[gemini] saved /tmp/gulfio/runs/20260615-100805/slide-6.jpg (768x1376)
+[slides] Done. 6 slides in /tmp/gulfio/runs/20260615-100805
+/tmp/gulfio/runs/20260615-100805/slide-1.jpg
+/tmp/gulfio/runs/20260615-100805/slide-2.jpg
+/tmp/gulfio/runs/20260615-100805/slide-3.jpg
+/tmp/gulfio/runs/20260615-100805/slide-4.jpg
+/tmp/gulfio/runs/20260615-100805/slide-5.jpg
+/tmp/gulfio/runs/20260615-100805/slide-6.jpg
+>> Phase 3b: Vision QA (regenerating any weak slides)
+Installed 5 packages in 7ms
+slide-1: PASS
+slide-2: PASS
+slide-3: regenerating (try 1/3) — reason: Readable text is present on the documents in the bottom ~20% of the image.
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/gulfio/runs/20260615-100805/slide-3.jpg i2i=True
+[gemini] saved /tmp/gulfio/runs/20260615-100805/slide-3.jpg (768x1376)
+slide-3: PASS (after 1 regen)
+slide-4: PASS
+slide-5: regenerating (try 1/3) — reason: Headline text is garbled with a duplicate 'that' ('that that the volume').
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/gulfio/runs/20260615-100805/slide-5.jpg i2i=True
+[gemini] saved /tmp/gulfio/runs/20260615-100805/slide-5.jpg (768x1376)
+slide-5: regenerating (try 2/3) — reason: Headline text is misspelled: 'voume' instead of 'volume'.
+[gemini] model=gemini-3.1-flash-image-preview output=/tmp/gulfio/runs/20260615-100805/slide-5.jpg i2i=True
+[gemini] saved /tmp/gulfio/runs/20260615-100805/slide-5.jpg (768x1376)
+slide-5: PASS (after 2 regen)
+slide-6: PASS
+[qa] report written to /tmp/gulfio/runs/20260615-100805/qa-report.txt
+[qa] all slides passed
+>> Phase 4: Publish
+[publish] Uploading 6 slides to: instagram ...
+[publish] request_id=8c5c10e31ace439ebe6f66488b3e9b2a
+[publish] Wrote /tmp/gulfio/runs/20260615-100805/post-info.json
+[learn] posts=2 avgEng=0 bestHook="Review: Rijal Almaa Heritage Village" bestTime=20h
+[learn] rec: Not enough data yet — keep publishing daily to build the learning baseline (target: 10 posts).
+================================================================
+ DONE. Artifacts in: /tmp/gulfio/runs/20260615-100805
+================================================================
+Daily run end (0): 2026-06-15T09:11:05Z

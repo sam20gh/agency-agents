@@ -1,6 +1,6 @@
 # Gulfio — Instagram Brand Aesthetic Guide
 
-*Generated 2026-06-14 from curated brand identity.*
+*Generated 2026-06-15 from curated brand identity.*
 
 The goal: a feed so consistent a follower recognises a Gulfio post **before** they read the handle — and always knows the next tap is "download the app".
 

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-14T20:22:27.142Z",
-  "postCount": 1,
+  "updatedAt": "2026-06-15T09:11:05.157Z",
+  "postCount": 2,
   "history": [
     {
       "request_id": "ffd5052a44f7435fb05d9ac4f26bcb81",
@@ -9,6 +9,19 @@
       "hour": "20",
       "day": "Sun",
       "hookCopy": "Review: Rijal Almaa Heritage Village",
+      "hookStyle": "bold-claim",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "engagementRate": 0
+    },
+    {
+      "request_id": "8c5c10e31ace439ebe6f66488b3e9b2a",
+      "publishedAt": "2026-06-15T09:11:05.069Z",
+      "hour": "09",
+      "day": "Mon",
+      "hookCopy": "Oman-Pakistan Friendship Association established",
       "hookStyle": "bold-claim",
       "views": 0,
       "likes": 0,
@@ -23,11 +36,22 @@
       "style": "bold-claim",
       "views": 0,
       "engagementRate": 0
+    },
+    {
+      "hook": "Oman-Pakistan Friendship Association established",
+      "style": "bold-claim",
+      "views": 0,
+      "engagementRate": 0
     }
   ],
   "bestTimes": [
     {
       "value": "20",
+      "avgViews": 0,
+      "samples": 1
+    },
+    {
+      "value": "09",
       "avgViews": 0,
       "samples": 1
     }
@@ -37,11 +61,16 @@
       "value": "Sun",
       "avgViews": 0,
       "samples": 1
+    },
+    {
+      "value": "Mon",
+      "avgViews": 0,
+      "samples": 1
     }
   ],
   "hookStyleStats": {
     "bold-claim": {
-      "count": 1,
+      "count": 2,
       "avgViews": 0,
       "avgEngagement": 0
     }
@@ -53,6 +82,6 @@
   "profileSnapshot": {
     "followers": 0,
     "totalLikes": 0,
-    "fetchedAt": "2026-06-14T20:14:03.369Z"
+    "fetchedAt": "2026-06-15T09:08:07.845Z"
   }
 }

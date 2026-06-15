@@ -8,7 +8,7 @@
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
-        <string>/Users/sam/Desktop/Grub24/grub24/backup/agency-agents/marketing/gulfio-news-engine/local-daily.sh</string>
+        <string>/Users/sam/Grub24/agency-agents/marketing/gulfio-news-engine/local-daily.sh</string>
     </array>
 
     <!-- Target: 12:00 noon UAE time (UTC+4) = 08:00 UTC, every day.
@@ -39,8 +39,8 @@
     <false/>
 
     <key>StandardOutPath</key>
-    <string>/Users/sam/Desktop/Grub24/grub24/backup/agency-agents/marketing/gulfio-news-engine/state/launchd.out.log</string>
+    <string>/Users/sam/Grub24/agency-agents/marketing/gulfio-news-engine/state/launchd.out.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/sam/Desktop/Grub24/grub24/backup/agency-agents/marketing/gulfio-news-engine/state/launchd.err.log</string>
+    <string>/Users/sam/Grub24/agency-agents/marketing/gulfio-news-engine/state/launchd.err.log</string>
 </dict>
 </plist>

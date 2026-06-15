@@ -1,6 +1,6 @@
 # Gulfio — Story Highlights Plan
 
-*Generated 2026-06-14.*
+*Generated 2026-06-15.*
 
 The Highlights tray is the **permanent pitch** under the bio. A cold visitor reads it left→right; order it the way they evaluate a news app: *what is it → is it fresh → what does it cover → why this one → how do I get it.*
 

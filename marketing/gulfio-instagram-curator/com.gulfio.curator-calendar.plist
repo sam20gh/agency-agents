@@ -8,7 +8,7 @@
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
-        <string>/Users/sam/Desktop/Grub24/grub24/backup/agency-agents/marketing/gulfio-instagram-curator/monthly-calendar.sh</string>
+        <string>/Users/sam/Grub24/agency-agents/marketing/gulfio-instagram-curator/monthly-calendar.sh</string>
     </array>
 
     <!-- Monthly: 1st of each month at 06:30 local time. Runs well before the
@@ -28,8 +28,8 @@
     <false/>
 
     <key>StandardOutPath</key>
-    <string>/Users/sam/Desktop/Grub24/grub24/backup/agency-agents/marketing/gulfio-instagram-curator/state/launchd.out.log</string>
+    <string>/Users/sam/Grub24/agency-agents/marketing/gulfio-instagram-curator/state/launchd.out.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/sam/Desktop/Grub24/grub24/backup/agency-agents/marketing/gulfio-instagram-curator/state/launchd.err.log</string>
+    <string>/Users/sam/Grub24/agency-agents/marketing/gulfio-instagram-curator/state/launchd.err.log</string>
 </dict>
 </plist>
